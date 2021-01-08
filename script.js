@@ -12,7 +12,8 @@ $(document).ready(function () {
         four = $("#4pm"),
         five = $("#5pm"),
         numberOfHours = 9,
-        saveBtn = $("i");
+        saveBtn = $("i"),
+        saveAllBtn = $("#saveAll");
 
     const timeFormat = 'HH:mm:ss';
 
@@ -47,20 +48,6 @@ $(document).ready(function () {
         }
     }
 
-    // This function is what will save your text to local storage, so that it can be retrieved by the populate function
-    saveBtn.on("click", function (event) {
-        event.preventDefault();
-        var index = $(this).attr("index");
-        // for some reason, this jQuery selector always returns an array. to get around that, I had to use
-        // .eq(0) (because it was always the only thing in the array).
-        var textToSave = $('textarea[index=' + index + ']').eq(0).val();
-        var objectToSave = {
-            index: index,
-            text: textToSave
-        }
-        localStorage.setItem(index, JSON.stringify(objectToSave));
-    });
-
 
     // populate preciously saved items
     populate();
@@ -82,4 +69,32 @@ $(document).ready(function () {
         checkTime(four, '16:00:00', '17:00:00');
         checkTime(five, '17:00:00', '18:00:00');
     }, 200);
+
+
+    // This function is what will save your text to local storage, so that it can be retrieved by the populate function
+    saveBtn.on("click", function (event) {
+        event.preventDefault();
+        var index = $(this).attr("index");
+        // for some reason, this jQuery selector always returns an array. to get around that, I had to use
+        // .eq(0) (because it was always the only thing in the array).
+        var textToSave = $('textarea[index=' + index + ']').eq(0).val();
+        var objectToSave = {
+            index: index,
+            text: textToSave
+        }
+        localStorage.setItem(index, JSON.stringify(objectToSave));
+    });
+
+
+    saveAllBtn.on("click", function () {
+        for (let i = 0; i < numberOfHours; i++) {
+            var index = i + 9;
+            var textToSave = $('textarea[index=' + index + ']').eq(0).val();
+            var objectToSave = {
+                index: index,
+                text: textToSave
+            }
+            localStorage.setItem(index, JSON.stringify(objectToSave));
+        }
+    })
 });
