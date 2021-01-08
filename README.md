@@ -27,3 +27,5 @@ Daily planner built on JS with jQuery and Moment.js
 > THEN the text for that event is saved in local storage  
 > WHEN I refresh the page  
 > THEN the saved events persist  
+
+View deployed version here: https://keaton-brewster.github.io/Work-Day-Planner/
