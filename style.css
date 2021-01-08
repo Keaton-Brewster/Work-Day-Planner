@@ -12,7 +12,40 @@ body {
     border-left: 1px solid black;
     padding: 10px;
   }
+
+  @media only screen and (min-width: 1025px) {
+    textarea {
+      width: 50em;
+    }
+  }
   
+  @media only screen and (max-width: 1024px) {
+    textarea {
+      width: 35em;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    textarea {
+      width: 20em;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    textarea {
+      width: 15em;
+    }
+  }
+
+  h4 {
+    margin-bottom: 0;
+    padding-top: 10px;
+  }
+  
+  .input-group {
+    margin: 10px 0px;
+  }
+
   .jumbotron {
     text-align: center;
     background-color: transparent;
@@ -40,6 +73,7 @@ body {
     background-color: #ffffff;
     color: #000000;
     border-top: 1px dashed #000000;
+    border-bottom: 1px dashed #000000;
   }
   
   .past {
