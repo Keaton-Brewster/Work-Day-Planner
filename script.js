@@ -81,5 +81,5 @@ $(document).ready(function () {
         checkTime(three, '15:00:00', '16:00:00');
         checkTime(four, '16:00:00', '17:00:00');
         checkTime(five, '17:00:00', '18:00:00');
-    }, 200;
+    }, 200);
 });
