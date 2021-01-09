@@ -12,24 +12,26 @@ $(document).ready(function () {
         for (let i = 0; i < numberOfHours; i++) {
             var currentTime = parseInt(dayjs().format("H")),
                 index = i + 9,
-                x = $('textarea[index=' + index + ']');
-            x.removeClass('past');
-            x.removeClass('present');
-            x.removeClass('future');
+                timeBlock = $('textarea[index=' + index + ']');
+            // ensure that the timeblock is not holding onto a class preciously set. 
+            timeBlock.removeClass('past');
+            timeBlock.removeClass('present');
+            timeBlock.removeClass('future');
             if (
                 currentTime > index
             ) {
-                x.addClass('past');
+                timeBlock.prop('disabled', true);
+                timeBlock.addClass('past');
             }
             else if (
-                currentTime == index
+                currentTime === index
             ) {
-                x.addClass('present');
+                timeBlock.addClass('present');
             }
             else if (
                 currentTime < index
             ) {
-                x.addClass('future');
+                timeBlock.addClass('future');
             };
         };
     };
