@@ -40,7 +40,7 @@ $(document).ready(function () {
     function save(event) {
         event.preventDefault();
         var index = $(this).attr('index');
-        // for some reason, this jQuery selector always returns an array. to get around that, I had to use
+        // jQuery selector always returns an array. to get around that, I had to use
         // .eq(0) (because it was always the only thing in the array).
         var textToSave = $('textarea[index=' + index + ']').eq(0).val();
         var objectToSave = {
