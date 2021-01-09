@@ -20,7 +20,6 @@ $(document).ready(function () {
             if (
                 currentTime > index
             ) {
-                timeBlock.prop('disabled', true);
                 timeBlock.addClass('past');
             }
             else if (
