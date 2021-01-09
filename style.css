@@ -51,7 +51,8 @@ body {
     background-color: #ffffff;
     color: #000000;
     border-top: 1px dashed #000000;
-    border-bottom: 1px dashed #000000;
+    padding-top: 20px;
+    padding-right: 10px;
   }
   
   .past {
@@ -67,9 +68,9 @@ body {
   }
   
   .saveBtn {
+    border-style: none;
     border-left: 1px solid black;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 0px 15px 15px 0px;
     background-color: #06AED5;
     color: white;
   }
@@ -78,3 +79,7 @@ body {
     font-size: 20px;
     transition: all .3s ease-in-out;
   } 
+
+  #saveAll {
+    margin: 10px;
+  }
