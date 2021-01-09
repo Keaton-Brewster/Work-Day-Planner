@@ -37,7 +37,6 @@ body {
   
   .time-block{
     text-align: center;
-    border-radius: 15px;
   }
   
   .row {
@@ -69,13 +68,19 @@ body {
   .saveBtn {
     border-style: none;
     border-left: 1px solid black;
-    border-radius: 0px 15px 15px 0px;
+    border-radius: 0 !important;
     background-color: #007bffa7;
+    color: white;
+  }
+
+  .clearBtn {
+    border-style: none;
+    border-radius: 0 5px 5px 0 !important;
+    background-color: #d9534f;
     color: white;
   }
   
   .saveBtn i:hover {
-    font-size: 20px;
     transition: all .5s ease-in-out;
   } 
 
