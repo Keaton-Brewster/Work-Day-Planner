@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var timedisplay = $("#currentDay"),
+    var timeDisplay = $("#currentDay"),
         numberOfHours = 9,
         saveIcon = $("i"),
         saveBtn = $(".saveBtn"),
@@ -64,10 +64,11 @@ $(document).ready(function () {
     populate();
 
     // set up time on top of the page
-    timedisplay.html(dayjs().format('MMMM D YYYY, h:mm:ss a'));
+    timeDisplay.html(dayjs().format('MMMM D YYYY, h:mm:ss a'));
+    // then start the interval that will update the time display every second - 
     // as well as check which boxes should be past, present, or future, per use of the checkTime() function
     setInterval(() => {
-        timedisplay.html(dayjs().format('MMMM D YYYY, h:mm:ss a'));
+        timeDisplay.html(dayjs().format('MMMM D YYYY, h:mm:ss a'));
         checkTime();
     }, 1000);
 
