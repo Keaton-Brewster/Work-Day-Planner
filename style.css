@@ -59,24 +59,24 @@ body {
   }
   
   .present {
-    background-color: #eac482;
+    background-color: #007bffa7;
   }
   
   .future {
-    background-color: #77dd77;
+    background-color: #77dd77cd;
   }
   
   .saveBtn {
     border-style: none;
     border-left: 1px solid black;
     border-radius: 0px 15px 15px 0px;
-    background-color: #44a163;
+    background-color: #007bffa7;
     color: white;
   }
   
   .saveBtn i:hover {
     font-size: 20px;
-    transition: all .3s ease-in-out;
+    transition: all .5s ease-in-out;
   } 
 
   #saveAll {
