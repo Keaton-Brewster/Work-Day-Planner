@@ -41,7 +41,6 @@ $(document).ready(function () {
         for (let i = 0; i < numberOfHours; i++) {
             var index = i + 9,
                 itemToPop = JSON.parse(localStorage.getItem(index));
-            console.log(itemToPop);
             if (itemToPop) {
                 $('textarea[index=' + index + ']').eq(0).val(itemToPop.text);
             }
@@ -49,9 +48,8 @@ $(document).ready(function () {
     }
 
 
-    // populate preciously saved items
+    // populate previously saved items
     populate();
-
 
     // set up time on top of the page
     setInterval(() => {
