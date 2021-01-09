@@ -1,18 +1,25 @@
 # Work-Day-Planner
 Daily planner built on JS with jQuery and Moment.js
 
+Tasked with creating a simple application for handling work events and 'to-dos', 
+the result lies before you, as polished as I can bear to make it.
+
+Using the application is simple and intuitive, but here are a few things to note:
+```
+The effects of save buttons and clear buttons will permanently change the local storage   
+Timeblocks that are in the past cannot be written in, so make sure before clearing anything that you aren't going to lose important information.   
+Time is set by local machine.   
+
+That is pretty much it!
+```
 
 ## User Story
-
 
 > AS AN employee with a busy schedule  
 > I WANT to add important events to a daily planner  
 > SO THAT I can manage my time effectively  
 
-
-
 ## Acceptance Criteria
-
 
 > GIVEN I am using a daily planner to create a schedule  
 > WHEN I open the planner  
