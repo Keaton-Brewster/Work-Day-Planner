@@ -12,39 +12,16 @@ body {
     color: #000000;
     border-left: 1px solid black;
     padding: 10px;
+    width: 100%;
   }
-
-  @media only screen and (min-width: 1025px) {
-    textarea {
-      width: 50em;
-    }
-  }
-  
-  @media only screen and (max-width: 1024px) {
-    textarea {
-      width: 35em;
-    }
-  }
-
-  @media only screen and (max-width: 768px) {
-    textarea {
-      width: 20em;
-    }
-  }
-
-  @media only screen and (max-width: 480px) {
-    textarea {
-      width: 15em;
-    }
-  }
-
+/
   h4 {
-    margin-bottom: 0;
+    margin: 0;
     padding-top: 10px;
   }
   
   .input-group {
-    margin: 10px 0px;
+    margin: 5px 0px;
   }
 
   .jumbotron {
