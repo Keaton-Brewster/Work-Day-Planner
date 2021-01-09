@@ -55,11 +55,11 @@ body {
   }
   
   .past {
-    background-color: #d3d3d3;
+    background: repeating-linear-gradient(-40deg, #d3d3d3, #d3d3d3 30px, #9a9a9a 30px, #9a9a9a 60px);
   }
   
   .present {
-    background-color: #ff6961;
+    background-color: #eac482;
   }
   
   .future {
@@ -70,7 +70,7 @@ body {
     border-style: none;
     border-left: 1px solid black;
     border-radius: 0px 15px 15px 0px;
-    background-color: #06AED5;
+    background-color: #44a163;
     color: white;
   }
   
