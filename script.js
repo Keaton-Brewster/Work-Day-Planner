@@ -12,11 +12,12 @@ $(document).ready(function () {
         four = $("#4pm"),
         five = $("#5pm"),
         numberOfHours = 9,
-        saveBtn = $("i"),
-        saveAllBtn = $("#saveAll");
+        saveIcon = $("i"),
+        saveBtn = $(".saveBtn"),
+        saveAllBtn = $("#saveAll"),
+        clearAllBtn = $("#clearAll");
 
     const timeFormat = 'HH:mm:ss';
-
 
     // this interval updates the todo list every second so that it is always accurate as to which hour is past, present, or future
     function checkTime(box, hourStart, hourEnd) {
@@ -36,7 +37,6 @@ $(document).ready(function () {
         }
     };
 
-
     function populate() {
         for (let i = 0; i < numberOfHours; i++) {
             var index = i + 9,
@@ -46,7 +46,6 @@ $(document).ready(function () {
             }
         }
     }
-
 
     // populate previously saved items
     populate();
@@ -70,7 +69,7 @@ $(document).ready(function () {
 
 
     // This function is what will save your text to local storage, so that it can be retrieved by the populate function
-    saveBtn.on("click", function (event) {
+    function save(event) {
         event.preventDefault();
         var index = $(this).attr("index");
         // for some reason, this jQuery selector always returns an array. to get around that, I had to use
@@ -81,9 +80,12 @@ $(document).ready(function () {
             text: textToSave
         }
         localStorage.setItem(index, JSON.stringify(objectToSave));
-    });
+    };
+    // then the event listeners for the save buttons
+    saveBtn.on("click", save);
+    saveIcon.on("click", save)
 
-
+    // event listener for save all button
     saveAllBtn.on("click", function () {
         for (let i = 0; i < numberOfHours; i++) {
             var index = i + 9;
@@ -91,6 +93,20 @@ $(document).ready(function () {
             var objectToSave = {
                 index: index,
                 text: textToSave
+            }
+            localStorage.setItem(index, JSON.stringify(objectToSave));
+        }
+    });
+
+    // event listener for clear all button
+    clearAllBtn.on("click", function (event) {
+        event.preventDefault();
+        for (let i = 0; i < numberOfHours; i++) {
+            var index = i + 9;
+            $('textarea[index=' + index + ']').eq(0).val('');
+            var objectToSave = {
+                index: index,
+                text: ''
             }
             localStorage.setItem(index, JSON.stringify(objectToSave));
         }
