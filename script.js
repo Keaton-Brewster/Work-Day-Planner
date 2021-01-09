@@ -1,42 +1,38 @@
 $(document).ready(function () {
 
-
     var timedisplay = $("#currentDay"),
-        nine = $("#9am"),
-        ten = $("#10am"),
-        eleven = $("#11am"),
-        twelve = $("#12pm"),
-        one = $("#1pm"),
-        two = $("#2pm"),
-        three = $("#3pm"),
-        four = $("#4pm"),
-        five = $("#5pm"),
-        arrayOfHours = [nine, ten, eleven, twelve, one, two, three, four, five],
         numberOfHours = 9,
         saveIcon = $("i"),
         saveBtn = $(".saveBtn"),
         saveAllBtn = $("#saveAll"),
         clearAllBtn = $("#clearAll");
 
-    const timeFormat = 'HH:mm:ss';
-
     // this interval updates the todo list every second so that it is always accurate as to which hour is past, present, or future
-    function checkTime(box, hourStart, hourEnd) {
-        if (
-            moment().isAfter(moment(hourStart, timeFormat)) && moment().isAfter(moment(hourEnd, timeFormat))
-        ) {
-            box.addClass("past");
-        }
-        if (
-            moment().isAfter(moment(hourStart, timeFormat)) && moment().isBefore(moment(hourEnd, timeFormat))
-        ) {
-            box.addClass("present");
-        }
-        if (
-            moment().isBefore(moment(hourStart, timeFormat)) && moment().isBefore(moment(hourEnd, timeFormat))
-        ) {
-            box.addClass("future");
-        }
+    function checkTime() {
+        for (let i = 0; i < numberOfHours; i++) {
+            var currentTime = parseInt(dayjs().format("H")), 
+                index = i + 9,
+                x = $('textarea[index=' + index + ']');
+            x.removeClass('past');
+            x.removeClass('present');
+            x.removeClass('future');
+            if (
+                currentTime > index
+            ) {
+                x.addClass("past");
+            }
+            else if (
+                currentTime == index
+            ) {
+                x.addClass("present");
+            }
+            else if (
+                currentTime < index
+            ) {
+                x.addClass("future");
+            }
+            else { console.log("error") };
+        };
     };
 
 
@@ -64,26 +60,20 @@ $(document).ready(function () {
         }
     };
 
-    // initializing function, run on page load. 
+    // on page load, and refresh, fill boxes with anything saved to local storage 
     populate();
 
     // set up time on top of the page
+    timedisplay.html(dayjs().format('MMMM D YYYY, h:mm:ss a'));
+    // as well as check which boxes should be past, present, or future, per use of the checkTime() function
     setInterval(() => {
-        timedisplay.html(moment().format('MMMM Do YYYY, h:mm:ss a'));
-        checkTime(nine, '09:00:00', '09:59:59');
-        checkTime(ten, '10:00:00', '10:59:59');
-        checkTime(eleven, '11:00:00', '11:59:59');
-        checkTime(twelve, '12:00:00', '12:59:59');
-        checkTime(one, '13:00:00', '14:59:59');
-        checkTime(two, '14:00:00', '14:59:59');
-        checkTime(three, '15:00:00', '15:59:59');
-        checkTime(four, '16:00:00', '16:59:59');
-        checkTime(five, '17:00:00', '17:59:59');
+        timedisplay.html(dayjs().format('MMMM D YYYY, h:mm:ss a'));
+        checkTime();
     }, 1000);
 
     // then the event listeners for the save buttons
     saveBtn.on("click", save);
-    saveIcon.on("click", save)
+    saveIcon.on("click", save);
 
     // event listener for save all button
     saveAllBtn.on("click", function () {
