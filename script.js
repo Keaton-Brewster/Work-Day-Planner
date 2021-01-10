@@ -53,11 +53,7 @@ $(document).ready(function () {
         event.preventDefault();
         var index = $(this).attr('index');
         $('textarea[index=' + index + ']').eq(0).val('');
-        var objectToSave = {
-            index: index,
-            text: ''
-        }
-        localStorage.setItem(index, JSON.stringify(objectToSave));
+        localStorage.removeItem(index);
     }
 
     function populate() {
@@ -105,12 +101,7 @@ $(document).ready(function () {
         event.preventDefault();
         for (let i = 0; i < numberOfHours; i++) {
             var index = i + 9;
-            $('textarea[index=' + index + ']').eq(0).val('');
-            var objectToSave = {
-                index: index,
-                text: ''
-            }
-            localStorage.setItem(index, JSON.stringify(objectToSave));
+            localStorage.removeItem(index);
         }
     })
 });
