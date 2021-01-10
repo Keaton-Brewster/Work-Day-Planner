@@ -2,8 +2,10 @@ $(document).ready(function () {
 
     var timeDisplay = $("#currentDay"),
         numberOfHours = 9,
-        saveIcon = $("i"),
+        saveIcon = $(".fa-save"),
         saveBtn = $(".saveBtn"),
+        clearIcon = $(".fa-trash"),
+        clearBtn = $(".clearBtn"),
         saveAllBtn = $("#saveAll"),
         clearAllBtn = $("#clearAll");
 
@@ -49,6 +51,17 @@ $(document).ready(function () {
         localStorage.setItem(index, JSON.stringify(objectToSave));
     };
 
+    function clear(event) {
+        event.preventDefault();
+        var index = $(this).attr('index');
+        $('textarea[index=' + index + ']').eq(0).val('');
+        var objectToSave = {
+            index: index,
+            text: ''
+        }
+        localStorage.setItem(index, JSON.stringify(objectToSave));
+    }
+
     function populate() {
         for (let i = 0; i < numberOfHours; i++) {
             var index = i + 9,
@@ -74,6 +87,9 @@ $(document).ready(function () {
     // then the event listeners for the save buttons
     saveBtn.click(save);
     saveIcon.click(save);
+
+    clearBtn.click(clear);
+    clearIcon.clear(clear);
 
     // event listener for save all button
     saveAllBtn.click(function () {
