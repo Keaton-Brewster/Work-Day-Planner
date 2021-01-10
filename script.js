@@ -89,7 +89,7 @@ $(document).ready(function () {
     saveIcon.click(save);
 
     clearBtn.click(clear);
-    clearIcon.clear(clear);
+    clearIcon.click(clear);
 
     // event listener for save all button
     saveAllBtn.click(function () {
