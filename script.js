@@ -2,9 +2,7 @@ $(document).ready(function () {
 
     var timeDisplay = $("#currentDay"),
         numberOfHours = 9,
-        saveIcon = $(".fa-save"),
         saveBtn = $(".saveBtn"),
-        clearIcon = $(".fa-trash"),
         clearBtn = $(".clearBtn"),
         saveAllBtn = $("#saveAll"),
         clearAllBtn = $("#clearAll");
@@ -86,10 +84,8 @@ $(document).ready(function () {
 
     // then the event listeners for the save buttons
     saveBtn.click(save);
-    saveIcon.click(save);
 
     clearBtn.click(clear);
-    clearIcon.click(clear);
 
     // event listener for save all button
     saveAllBtn.click(function () {
