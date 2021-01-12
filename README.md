@@ -5,13 +5,14 @@ Tasked with creating a simple application for handling work events and 'to-dos',
 the result lies before you, as polished as I can bear to make it.
 
 Using the application is simple and intuitive, but here are a few things to note:
-```
-The effects of save buttons and clear buttons will permanently change the local storage   
-Timeblocks that are in the past cannot be written in, so make sure before clearing anything that you aren't going to lose important information.   
-Time is set by local machine.   
 
-That is pretty much it!
-```
+> The effects of save buttons and clear buttons will permanently change the local storage   
+> Timeblocks that are in the past cannot be written in, so make sure before clearing anything that you aren't going to     
+> lose important information.   
+> Time is set by local machine.   
+
+> That is pretty much it!
+
 
 ## User Story
 
