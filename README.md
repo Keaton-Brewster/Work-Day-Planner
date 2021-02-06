@@ -1,6 +1,9 @@
 # Work-Day-Planner
 Daily planner built on JS with jQuery and Moment.js
 
+## License
+   MIT [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Tasked with creating a simple application for handling work events and 'to-dos', 
 the result lies before you, as polished as I can bear to make it.
 
