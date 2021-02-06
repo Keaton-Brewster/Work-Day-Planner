@@ -15,11 +15,11 @@ Using the application is simple and intuitive, but here are a few things to note
 
 
 ## User Story
-
+--- 
 > AS AN employee with a busy schedule  
 > I WANT to add important events to a daily planner  
 > SO THAT I can manage my time effectively  
-
+--- 
 ## Acceptance Criteria
 
 > GIVEN I am using a daily planner to create a schedule  
@@ -39,8 +39,14 @@ Using the application is simple and intuitive, but here are a few things to note
 View deployed version here: https://keaton-brewster.github.io/Work-Day-Planner/
 
 Images:
-
+=== 
 ![Screen Shot 2021-01-09 at 1 11 59 PM](https://user-images.githubusercontent.com/65474893/104111326-34464000-52a6-11eb-9d76-4c4732294921.png)
 
 ![Screen Shot 2021-01-10 at 11 28 20 AM](https://user-images.githubusercontent.com/65474893/104130600-35737d80-5337-11eb-9e87-f9145c2778ed.png)
+
+Technology:
+--- 
+DAY.js
+jQuery
+Bootstrap
 
