@@ -49,7 +49,7 @@ Images:
 
 Technology:
 --- 
-DAY.js
-jQuery
-Bootstrap
+DAY.js  
+jQuery  
+Bootstrap  
 
